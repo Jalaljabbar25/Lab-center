@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <title>„—ﬂ“ «·›ÕÊ’«  «·⁄·„Ì… «·„ ﬁœ„…</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+        }
+
+        body {
+            background-color: #f4f5f7;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        header {
+            background-color: #0b3c5d;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .logo span {
+            font-weight: 300;
+            font-size: 0.9rem;
+            display: block;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+            font-size: 0.95rem;
+        }
+
+        nav li a {
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        nav li a:hover {
+            background-color: #fff;
+            color: #0b3c5d;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0b3c5d, #1d65a6);
+            color: #fff;
+            padding: 3rem 0 2.5rem;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr);
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .hero-title {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1rem;
+            margin-bottom: 1.25rem;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .btn-primary {
+            background-color: #f8b229;
+            color: #222;
+            padding: 0.6rem 1.2rem;
+            border-radius: 999px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #fff;
+            color: #fff;
+            padding: 0.6rem 1.2rem;
+            border-radius: 999px;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+
+        .hero-box {
+            background-color: rgba(255, 255, 255, 0.08);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(6px);
+        }
+
+        .hero-box h3 {
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .hero-box p {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-stats {
+            margin-top: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.85rem;
+        }
+
+        .hero-stat-item {
+            flex: 1 1 120px;
+        }
+
+        .hero-stat-title {
+            opacity: 0.8;
+        }
+
+        .hero-stat-value {
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        section {
+            padding: 2.5rem 0;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -6px;
+            right: 0;
+            width: 40%;
+            height: 2px;
+            background-color: #0b3c5d;
+            border-radius: 999px;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 2rem;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 1rem;
+            padding: 1.25rem 1.3rem;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+        }
+
+        .card h3 {
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            font-size: 0.92rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 0.8rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+            background-color: #e5eff7;
+            color: #0b3c5d;
+            margin-left: 0.3rem;
+            margin-bottom: 0.2rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+        }
+
+        th, td {
+            padding: 0.5rem;
+            border-bottom: 1px solid #ddd;
+            text-align: right;
+        }
+
+        th {
+            background-color: #eef2f7;
+            font-weight: 600;
+        }
+
+        .highlight-box {
+            background-color: #fff;
+            border-radius: 1rem;
+            padding: 1.25rem;
+            border: 1px dashed #cbd5e1;
+            font-size: 0.9rem;
+        }
+
+        /* Form */
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            font-size: 0.9rem;
+        }
+
+        label {
+            font-weight: 600;
+        }
+
+        input, select, textarea {
+            padding: 0.5rem 0.6rem;
+            border-radius: 0.6rem;
+            border: 1px solid #cbd5e1;
+            font-size: 0.9rem;
+            outline: none;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #0b3c5d;
+        }
+
+        textarea {
+            min-height: 100px;
+        }
+
+        footer {
+            background-color: #0b3c5d;
+            color: #fff;
+            padding: 1.5rem 0;
+            font-size: 0.85rem;
+            margin-top: 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .footer-title {
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+        }
+
+        .footer-list {
+            list-style: none;
+        }
+
+        .footer-list li {
+            margin-bottom: 0.25rem;
+        }
+
+        .copy {
+            text-align: center;
+            margin-top: 1rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 900px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            nav ul {
+                display: none; /*  »”Ìÿ ··„Ê»«Ì· (Ì„ﬂ‰ ·«Õﬁ« ≈÷«›… „‰ÌÊ Ã«‰»Ì…) */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container navbar">
+        <div class="logo">
+            „—ﬂ“ «·›ÕÊ’«  «·⁄·„Ì… «·„ ﬁœ„…
+            <span>„Œ »—«  «·„ÃÂ— «·≈·ﬂ —Ê‰Ì ÊÕÌÊœ «·√‘⁄… «·”Ì‰Ì… Ê«·—«„«‰</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">«·—∆Ì”Ì…</a></li>
+                <li><a href="#about">⁄‰ «·„—ﬂ“</a></li>
+                <li><a href="#services">«·›ÕÊ’« </a></li>
+                <li><a href="#instruments">«·√ÃÂ“…</a></li>
+                <li><a href="#booking">ÕÃ“ ›Õ’</a></li>
+                <li><a href="#contact"> Ê«’· „⁄‰«</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="home">
+    <div class="container hero-content">
+        <div>
+            <h1 class="hero-title">„—ﬂ“ «·›ÕÊ’«  «·⁄·„Ì… «·„ ﬁœ„… ··„Ê«œ</h1>
+            <p class="hero-subtitle">
+                 ﬁœÌ„ Œœ„«  ›Õ’ „ ﬁœ„… ··„Ê«œ «·’·»… Ê«·»Ê·Ì„—«  Ê«·‰«‰Ê„Ê«œ »«” Œœ«„
+                «·„ÃÂ— «·≈·ﬂ —Ê‰Ì (SEM/FESEM)° ÊÕÌÊœ «·√‘⁄… «·”Ì‰Ì… (XRD)° Ê«·—«„«‰
+                Ê€Ì—Â« „‰ «· ﬁ‰Ì«  «·ÕœÌÀ…° ·œ⁄„ «·ÿ·»… Ê«·»«ÕÀÌ‰ Ê«·ﬁÿ«⁄ «·’‰«⁄Ì.
+            </p>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">
+                    «ÿ·» ›Õ’« «·¬‰
+                </button>
+                <button class="btn-outline" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">
+                    «” ⁄—÷ √‰Ê«⁄ «·›ÕÊ’« 
+                </button>
+            </div>
+        </div>
+        <div class="hero-box">
+            <h3>·„«–«  Œ «— „—ﬂ“‰«ø</h3>
+            <p>ï √ÃÂ“… ÕœÌÀ… »œﬁ… ⁄«·Ì… Ê Õ«·Ì· „ÊÀÊﬁ….</p>
+            <p>ï ≈‘—«› √”« –… „ Œ’’Ì‰ ÊŒ»—… „Œ»—Ì… ÿÊÌ·….</p>
+            <p>ï œ⁄„ √ﬂ«œÌ„Ì ›Ì  ›”Ì— «·‰ «∆Ã Êﬂ «» Â« ›Ì «·√ÿ«—ÌÕ Ê«·»ÕÊÀ.</p>
+            <div class="hero-stats">
+                <div class="hero-stat-item">
+                    <div class="hero-stat-title">”‰Ê«  «·Œ»—…</div>
+                    <div class="hero-stat-value">+10</div>
+                </div>
+                <div class="hero-stat-item">
+                    <div class="hero-stat-title">⁄Ì‰«  „›ÕÊ’… ”‰ÊÌ«</div>
+                    <div class="hero-stat-value">+1200</div>
+                </div>
+                <div class="hero-stat-item">
+                    <div class="hero-stat-title"> ﬁ‰Ì«  ›Õ’ „ «Õ…</div>
+                    <div class="hero-stat-value">+8</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About -->
+<section id="about">
+    <div class="container two-column">
+        <div>
+            <h2 class="section-title">⁄‰ «·„—ﬂ“</h2>
+            <p style="margin-bottom: 0.7rem;">
+                ÌÂœ› „—ﬂ“ «·›ÕÊ’«  «·⁄·„Ì… «·„ ﬁœ„… ≈·Ï  Ê›Ì— »Ì∆… „Œ»—Ì… „ ﬂ«„·…
+                ·≈Ã—«¡ «·›ÕÊ’ «·„ ﬁœ„… ··„Ê«œ »«” Œœ«„ √ÕœÀ «·√ÃÂ“…° „⁄ «· —ﬂÌ“ ⁄·Ï
+                Œœ„… «·»«ÕÀÌ‰ Êÿ·»… «·œ—«”«  «·√Ê·Ì… Ê«·⁄·Ì«° ≈÷«›… ≈·Ï «· ⁄«Ê‰ „⁄
+                «·ﬁÿ«⁄Ì‰ «·⁄«„ Ê«·Œ«’.
+            </p>
+            <p style="margin-bottom: 0.7rem;">
+                Ìﬁœ„ «·„—ﬂ“ Œœ„«  ›Õ’ Ê Õ·Ì· ··⁄Ì‰«  «·’·»…° «·‰«‰ÊÌ…° «·»Ê·Ì„—Ì…°
+                Ê«·√€‘Ì… «·—ﬁÌﬁ…° „⁄ ≈„ﬂ«‰Ì… ≈’œ«—  ﬁ«—Ì— „›’·… »«··€ Ì‰ «·⁄—»Ì…
+                Ê«·≈‰ﬂ·Ì“Ì… Ê›ﬁ „ ÿ·»«  «·„Ã·«  «·⁄·„Ì….
+            </p>
+        </div>
+        <div class="highlight-box">
+            <strong>√Âœ«› «·„—ﬂ“:</strong>
+            <ul style="margin-top: 0.5rem; padding-right: 1.2rem; font-size: 0.9rem;">
+                <li>œ⁄„ «·⁄„·Ì… «·»ÕÀÌ… »√œÊ«   Õ·Ì· „ ﬁœ„….</li>
+                <li>—›⁄ ÃÊœ… «·√ÿ«—ÌÕ Ê«·»ÕÊÀ «·⁄·„Ì… ›Ì „Ã«· ⁄·„ «·„Ê«œ.</li>
+                <li> ﬁœÌ„ Œœ„«  «” ‘«—Ì… Ê›‰Ì… ··ﬁÿ«⁄ «·’‰«⁄Ì.</li>
+                <li> ‰ŸÌ„ Ê—‘ ⁄„· ÊœÊ—«   œ—Ì»Ì… ⁄·Ï  ‘€Ì· «·√ÃÂ“… Ê Õ·Ì· «·‰ «∆Ã.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Services -->
+<section id="services">
+    <div class="container">
+        <h2 class="section-title">√‰Ê«⁄ «·›ÕÊ’«  «·„ «Õ…</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3>›ÕÊ’«  «·„ÃÂ— «·≈·ﬂ —Ê‰Ì (SEM / FESEM)</h3>
+                <p>ï  ’ÊÌ— ”ÿÕÌ ⁄«·Ì «·œﬁ… ··⁄Ì‰«  «·’·»… Ê«·‰«‰Ê„Ê«œ.</p>
+                <p>ï  Õ·Ì· EDX · ÕœÌœ «·⁄‰«’— «·ﬂÌ„Ì«∆Ì… ⁄·Ï «·”ÿÕ.</p>
+                <p>ï ≈„ﬂ«‰Ì… ›Õ’ «·„ﬁ«ÿ⁄ «·⁄—÷Ì… ··√€‘Ì… «·—ﬁÌﬁ….</p>
+                <span class="tag">⁄Ì‰«  ’·»…</span>
+                <span class="tag">√€‘Ì… —ﬁÌﬁ…</span>
+            </div>
+            <div class="card">
+                <h3>›ÕÊ’«  ÕÌÊœ «·√‘⁄… «·”Ì‰Ì… (XRD)</h3>
+                <p>ï  ÕœÌœ «·√ÿÊ«— «·»·Ê—Ì… (Phase Identification).</p>
+                <p>ï Õ”«» ÕÃ„ «·»·Ê—«  (Crystallite Size) »«” Œœ«„ „⁄«œ·… Scherrer.</p>
+                <p>ï œ—«”… œ—Ã… «· »·Ê— ÊÊÃÊœ «·√ÿÊ«— «·À«‰ÊÌ….</p>
+                <span class="tag">„”«ÕÌﬁ</span>
+                <span class="tag">√€‘Ì… —ﬁÌﬁ…</span>
+            </div>
+            <div class="card">
+                <h3>›ÕÊ’«  —«„«‰ (Raman Spectroscopy)</h3>
+                <p>ï œ—«”… «·—Ê«»ÿ «·ﬂÌ„Ì«∆Ì… Ê«·√‰„«ÿ «·«Â “«“Ì… ··„Ê«œ.</p>
+                <p>ï ›Õ’ «·„Ê«œ «·ﬂ—»Ê‰Ì… (Graphene, CNTs) Ê«·»Ê·Ì„—« .</p>
+                <p>ï „·«∆„ ·œ—«”… «·⁄ÌÊ» Ê«· — Ì» «·»‰ÌÊÌ.</p>
+                <span class="tag">„Ê«œ ﬂ—»Ê‰Ì…</span>
+                <span class="tag">»Ê·Ì„—« </span>
+            </div>
+            <div class="card">
+                <h3>›ÕÊ’«  ≈÷«›Ì…</h3>
+                <p>Ì„ﬂ‰  Ê›Ì— ›ÕÊ’ √Œ—Ï „À·: UV-Vis, PL, AFM, TGA Õ”»  Ê›— «·√ÃÂ“….</p>
+                <p> Ê«’· „⁄‰« ·„⁄—›… «· ›«’Ì· Ê≈„ﬂ«‰Ì… «·›Õ’.</p>
+            </div>
+        </div>
+
+        <h3 style="margin-top: 2rem; font-size: 1.1rem;">„·Œ’ «·›ÕÊ’« </h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>‰Ê⁄ «·›Õ’</th>
+                    <th>‰Ê⁄ «·⁄Ì‰…</th>
+                    <th>«·Êﬁ  «· ﬁ—Ì»Ì</th>
+                    <th>„·«ÕŸ« </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>SEM / FESEM + EDX</td>
+                    <td>⁄Ì‰«  ’·»… / √€‘Ì… —ﬁÌﬁ…</td>
+                    <td>2ñ5 √Ì«„ ⁄„·</td>
+                    <td>Ì ÿ·»  À»Ì  «·⁄Ì‰… ÃÌœ« Ê Ã›Ì›Â«</td>
+                </tr>
+                <tr>
+                    <td>XRD</td>
+                    <td>„”«ÕÌﬁ / √€‘Ì… —ﬁÌﬁ…</td>
+                    <td>3ñ7 √Ì«„ ⁄„·</td>
+                    <td> ›÷¯· ﬂ„Ì… ﬂ«›Ì… „‰ «·⁄Ì‰…</td>
+                </tr>
+                <tr>
+                    <td>Raman</td>
+                    <td>„Ê«œ ﬂ—»Ê‰Ì… / »Ê·Ì„—«  / √€‘Ì…</td>
+                    <td>2ñ4 √Ì«„ ⁄„·</td>
+                    <td> ı›÷¯· ⁄Ì‰«  –«  ”ÿÕ „” ÊÚ ‰”»Ì«</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- Instruments -->
+<section id="instruments">
+    <div class="container">
+        <h2 class="section-title">«·√ÃÂ“… «·„ Ê›—…</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3>„ÃÂ— ≈·ﬂ —Ê‰Ì „«”Õ (SEM / FESEM)</h3>
+                <p><strong>«·„ÊœÌ·:</strong> (Ìıﬂ » «”„ «·ÃÂ«“ Â‰«)</p>
+                <p><strong>«·‘—ﬂ…:</strong> (Nova NanoSEM / JEOL / €Ì—Â«)</p>
+                <p><strong>«·„Ê«’›« :</strong></p>
+                <ul style="padding-right: 1.2rem; font-size: 0.9rem;">
+                    <li>„œÏ «·›Ê· Ì…: 0.5ñ30 kV (Ìı⁄œ¯· Õ”» «·ÃÂ«“).</li>
+                    <li>œﬁ…  ’ÊÌ— ‰«‰ÊÌ… ⁄«·Ì….</li>
+                    <li>„“Êœ »ﬂ«‘› EDX · Õ·Ì· «·⁄‰«’—.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>ÃÂ«“ ÕÌÊœ «·√‘⁄… «·”Ì‰Ì… (XRD)</h3>
+                <p><strong>«·„ÊœÌ·:</strong> (PANalytical XíPert MPD „À·«)</p>
+                <p><strong>«·„Ê«’›« :</strong></p>
+                <ul style="padding-right: 1.2rem; font-size: 0.9rem;">
+                    <li>√‰»Ê» Cu K?.</li>
+                    <li>„œÏ “«ÊÌ… 2? Õ Ï 80∞ √Ê √ﬂÀ—.</li>
+                    <li>»—«„Ã  Õ·Ì· √ÿÊ«— „ ﬁœ„….</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>ÃÂ«“ —«„«‰ (Raman)</h3>
+                <p><strong>«·„ÊœÌ·:</strong> (Ìıﬂ » Â‰«)</p>
+                <p><strong>«·„Ê«’›« :</strong></p>
+                <ul style="padding-right: 1.2rem; font-size: 0.9rem;">
+                    <li>·Ì“— »ÿÊ· „ÊÃÌ („À·« 532 nm √Ê 785 nm).</li>
+                    <li>„œÏ ÿÌ›Ì Ê«”⁄ ··„Ê«œ «·„Œ ·›….</li>
+                    <li>œﬁ… ÿÌ›Ì… ⁄«·Ì… ·œ—«”… «·«Â “«“« .</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Booking -->
+<section id="booking">
+    <div class="container">
+        <h2 class="section-title">‰„Ê–Ã ÿ·» ›Õ’ / ÕÃ“ „Ê⁄œ</h2>
+        <p style="margin-bottom: 1rem; font-size: 0.9rem;">
+            Ì—ÃÏ „·¡ «·»Ì«‰«  «· «·Ì… ·Ì „ «· Ê«’· „⁄ﬂ„ · √ﬂÌœ ÕÃ“ «·›Õ’ Ê ÕœÌœ „Ê⁄œ  ”·Ì„ «·⁄Ì‰« .
+        </p>
+        <form>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="name">«”„ «·»«ÕÀ / „ﬁœ„ «·ÿ·»</label>
+                    <input type="text" id="name" placeholder="«ﬂ » «·«”„ «·À·«ÀÌ">
+                </div>
+                <div class="form-group">
+                    <label for="institution">«·ÃÂ… / «·Ã«„⁄…</label>
+                    <input type="text" id="institution" placeholder="„À«·: Ã«„⁄… «·»’—… - ﬂ·Ì… «·⁄·Ê„">
+                </div>
+                <div class="form-group">
+                    <label for="email">«·»—Ìœ «·≈·ﬂ —Ê‰Ì</label>
+                    <input type="email" id="email" placeholder="example@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="phone">—ﬁ„ «·Â« ›</label>
+                    <input type="text" id="phone" placeholder="—ﬁ„ «·Â« › „⁄ «·„› «Õ">
+                </div>
+                <div class="form-group">
+                    <label for="test-type">‰Ê⁄ «·›Õ’ «·„ÿ·Ê»</label>
+                    <select id="test-type">
+                        <option>«Œ — ‰Ê⁄ «·›Õ’</option>
+                        <option>SEM / FESEM + EDX</option>
+                        <option>XRD</option>
+                        <option>Raman</option>
+                        <option>√Œ—Ï (Ìı–ﬂ— ›Ì «·„·«ÕŸ« )</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="sample-type">‰Ê⁄ «·⁄Ì‰…</label>
+                    <input type="text" id="sample-type" placeholder="„”ÕÊﬁ° €‘«¡ —ﬁÌﬁ° ﬁÿ⁄… ’·»…...">
+                </div>
+            </div>
+            <div class="form-group" style="margin-top: 1rem;">
+                <label for="notes">„·«ÕŸ«  ≈÷«›Ì… /  ›«’Ì· ⁄‰ «·⁄Ì‰…</label>
+                <textarea id="notes" placeholder="«ﬂ » √Ì  ›«’Ì· „Â„… ⁄‰ «·⁄Ì‰…° ⁄œœ «·⁄Ì‰« ° Ÿ—Ê› «· Õ÷Ì—° œ—Ã… «·Õ”«”Ì… «·„ÿ·Ê»…..."></textarea>
+            </div>
+            <div style="margin-top: 1rem;">
+                <button type="button" class="btn-primary">≈—”«· «·ÿ·» ( ’„Ì„ „»œ∆Ì)</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+    <div class="container">
+        <h2 class="section-title"> Ê«’· „⁄‰«</h2>
+        <div class="two-column">
+            <div>
+                <p style="margin-bottom: 0.6rem;">
+                    ··„“Ìœ „‰ «·„⁄·Ê„«  ÕÊ· «·›ÕÊ’«  «·„ «Õ…° «·√”⁄«—° Ê√Êﬁ«  «” ·«„ «·⁄Ì‰« °
+                    Ì„ﬂ‰ﬂ„ «· Ê«’· „⁄‰« ⁄»— «·»Ì«‰«  «· «·Ì…:
+                </p>
+                <p><strong>«·⁄‰Ê«‰:</strong> Ìﬂ » ⁄‰Ê«‰ «·„—ﬂ“ Â‰« („À«·: Ã«„⁄… «·»’—… - ﬂ·Ì… «·⁄·Ê„ - ﬁ”„ «·›Ì“Ì«¡)</p>
+                <p><strong>«·»—Ìœ «·≈·ﬂ —Ê‰Ì:</strong> info@lab-center.com (Ìı⁄œ· ·«Õﬁ«)</p>
+                <p><strong>«·Â« ›:</strong> 0000000000 (Ìı⁄œ· ·«Õﬁ«)</p>
+            </div>
+            <div class="highlight-box">
+                <strong>„·«ÕŸ«  „Â„… ··»«ÕÀÌ‰:</strong>
+                <ul style="margin-top: 0.5rem; padding-right: 1.2rem; font-size: 0.9rem;">
+                    <li>Ì—ÃÏ «· √ﬂœ „‰  ⁄»∆… «” „«—… ÿ·» «·›Õ’ ﬁ»·  ”·Ì„ «·⁄Ì‰« .</li>
+                    <li>›Ì Õ«· ÊÃÊœ „ ÿ·»«  Œ«’… („À· Ÿ—Ê›  ›—Ì€° Õ—«—…... ≈·Œ) Ì—ÃÏ –ﬂ—Â« „”»ﬁ«.</li>
+                    <li>Ì„ﬂ‰  Ê›Ì—  ﬁ—Ì— ⁄·„Ì „Œ ’— ⁄‰ «·‰ «∆Ã ⁄‰œ «·ÿ·».</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container footer-grid">
+        <div>
+            <div class="footer-title">„—ﬂ“ «·›ÕÊ’«  «·⁄·„Ì… «·„ ﬁœ„…</div>
+            <p>Œœ„«   Õ·Ì· „ ﬁœ„… ·œ⁄„ «·»ÕÀ «·⁄·„Ì Ê ÿÊÌ— «·„Ê«œ.</p>
+        </div>
+        <div>
+            <div class="footer-title">—Ê«»ÿ ”—Ì⁄…</div>
+            <ul class="footer-list">
+                <li><a href="#services">√‰Ê«⁄ «·›ÕÊ’« </a></li>
+                <li><a href="#instruments">«·√ÃÂ“…</a></li>
+                <li><a href="#booking">‰„Ê–Ã ÿ·» «·›Õ’</a></li>
+            </ul>
+        </div>
+        <div>
+            <div class="footer-title">„⁄·Ê„«  «·« ’«·</div>
+            <p>«·»—Ìœ: info@lab-center.com</p>
+            <p>«·Â« ›: 0000000000</p>
+        </div>
+    </div>
+    <div class="copy">
+        &copy; <span id="year"></span> „—ﬂ“ «·›ÕÊ’«  «·⁄·„Ì… «·„ ﬁœ„… - Ã„Ì⁄ «·ÕﬁÊﬁ „Õ›ÊŸ….
+    </div>
+</footer>
+
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
